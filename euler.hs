@@ -81,6 +81,15 @@ problem_8 = maximum $ map listProduct listsWithoutZero
         listsWithoutZero = filter (not . elem 0) $ 
           thirteenLists $ digits 10 thousandDigitNumber
 
+pythagoreanTriplets l = [[a, b, c] | m <- [2..(floor . sqrt . fromIntegral $ l)],
+                                     n <- [1..(m-1)],
+                                     let a = m^2 - n^2,
+                                     let b = 2*m*n,
+                                     let c = m^2 + n^2,
+                                     a+b+c == l]
+
+problem_9 = product . head . pythagoreanTriplets $ 1000
+
 
 
 
