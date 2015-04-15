@@ -90,6 +90,6 @@ pythagoreanTriplets l = [[a, b, c] | m <- [2..(floor . sqrt . fromIntegral $ l)]
 
 problem_9 = product . head . pythagoreanTriplets $ 1000
 
-
+problem_10 = sum $ takeWhile (< 2000000) primes
 
 
